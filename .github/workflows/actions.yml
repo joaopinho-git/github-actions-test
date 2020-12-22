@@ -5,8 +5,7 @@ on:
   #schedule:
   #  - cron: "0/5 * * * *" #every 5 mins
   repository_dispatch:
-	  types: [build]
-  # 
+    types: [build] 
   pull_request:
     types: [closed, assigned, opened, reopened]
 
