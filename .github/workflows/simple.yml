@@ -3,7 +3,7 @@ name: Shell Commands
 on: [push]
 
 jobs: 
-  run-shell-command:
+  run-shell-commands:
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
@@ -18,3 +18,11 @@ jobs:
           import platform
           print(platform.processor())
         shell: python
+  run-windows-commands:
+    runs-on: windows-latest
+    steps:
+      - name: Directory Powershell
+        run: Get_Location
+      - name: Directory Bash
+        run: pwd
+        shell: bash
