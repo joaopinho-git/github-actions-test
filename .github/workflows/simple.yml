@@ -13,3 +13,8 @@ jobs:
           node -v
           npm -v
           pwsh
+      - name: python Commands
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
