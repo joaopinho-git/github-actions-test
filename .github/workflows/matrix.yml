@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        node-version: [6,8,10]
+        node_version: [6,8,10]
       fail-fast: true               #if one fails all break
       #max-parallel: 0
     runs-on: ${{ matrix.os }}
