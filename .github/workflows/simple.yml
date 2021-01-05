@@ -5,10 +5,13 @@ on: [pull_request] #[push]
 jobs: 
   run-shell-commands:
     runs-on: ubuntu-latest
+    timeout-minutes: 360
     steps:
       - name: echo a string
         run: echo "Hello Github Actions World"
+        continue-on-error: true
       - name: multiline script
+        if: failure()
         run: |
           node -v
           npm -v
