@@ -1,12 +1,11 @@
 param(
-    [string]  $ChannelName,
-    [string]  $Message,
-    [string]  $SenderName ='Release Team',
-    [string]  $IconURL = 'http://icons.iconarchive.com/icons/xenatt/the-circle/512/App-Messages-icon.png',
-    [string]  $MessageDetail = '',
-    [string]  $FarfetchToken
+    [string]$ChannelName,
+    [string]$Message,
+    [string]$SenderName ='Release Team',
+    [string]$FarfetchToken
 )
 
+$IconURL = 'http://icons.iconarchive.com/icons/xenatt/the-circle/512/App-Messages-icon.png'
 if(!$ChannelName.StartsWith('#'))
 {
 	$ChannelName = '#'+$ChannelName
