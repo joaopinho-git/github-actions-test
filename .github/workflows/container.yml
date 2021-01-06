@@ -21,6 +21,8 @@ jobs:
       #     entrypoint: /usr/local/bin/node
       #     args: -v
       - uses: actions/checkout@v1
+      - name: give permissions to SH that came from windows
+        run: chmod +x $home/script.sh
       - name: Run Script
         uses: docker://node:12.14.1-alpine3.10
         with:
