@@ -3,7 +3,7 @@ param(
     [string]  $Message ,
     [string]  $SenderName ='Release Team',
     [string]  $IconURL = 'http://icons.iconarchive.com/icons/xenatt/the-circle/512/App-Messages-icon.png',
-    [string]  $MessageDetail = ''
+    [string]  $MessageDetail = '',
 	[string]  $FarfetchToken = ''
 )
 
