@@ -20,7 +20,7 @@ jobs:
       #   with:
       #     entrypoint: /usr/local/bin/node
       #     args: -v
-      - uses: actions/checkiout@v1
+      - uses: actions/checkout@v1
       - name: Run Script
         uses: docker://node:12.14.1-alpine3.10
         with:
