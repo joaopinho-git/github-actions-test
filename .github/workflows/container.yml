@@ -28,6 +28,10 @@ jobs:
         with:
           entrypoint: ./script.sh
           args: 'String comming from argument'
+      - name: Slack message
+        run: |
+          ./slack.ps1 -ChannelName "testechan" -Message "Message from container in github Actions" -FarfetchToken ${{ secrets.FARFETCHSLACKTOKEN }}
+          cat slack.ps1
   # node-docker:
   #   runs-on: ubuntu-latest
   #   services:
