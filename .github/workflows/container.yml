@@ -22,7 +22,10 @@ jobs:
       #     args: -v
       - uses: actions/checkout@v1
       - name: give permissions to SH that came from windows
-        run: ls -la;pwd;chmod +x script.sh
+        run: |
+          ls -la
+          pwd
+          chmod +x script.sh slack.ps1
       - name: Run Script
         uses: docker://node:12.14.1-alpine3.10
         with:
