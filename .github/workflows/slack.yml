@@ -9,4 +9,4 @@ jobs:
         run: |
           curl -X POST -H 'Content-type: application/json'
            -- data '{"text":"New pull_request created: <${{ github.event.pulls.html_url }}|${{ github.event.pulls.pull_request }}.>"}' 
-           ${{ secrets.SLACK_WEBHOOK }}
+           ${{ secrets.SLACK_WEBHOOK }} 
