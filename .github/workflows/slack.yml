@@ -7,4 +7,4 @@ jobs:
     steps: 
       - name: pull_request Message
         run: | 
-          curl -X POST -H 'Content-type: application/json' -- data '{"text":"New issue created: <${{ github.event.issue.html_url }}|${{ github.event.issue.title }}.>"}' ${{ secrets.SLACK_WEBHOOK }}
+          curl -X POST -H 'Content-type:application/json' -d '{"text":"New issue created: <${{ github.event.issue.html_url }}|${{ github.event.issue.title }}.>"}' https://hooks.slack.com/services/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
