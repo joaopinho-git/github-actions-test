@@ -1,6 +1,8 @@
 name: Matrix
 
-on: pull_request
+on: 
+  pull_request:
+    branches: [develop, master22]
 
 jobs:
   node-version: 

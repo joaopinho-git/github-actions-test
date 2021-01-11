@@ -8,6 +8,7 @@ on:
     types: [build] 
   pull_request:
     types: [closed, assigned, opened, reopened]
+    branches: [develop, master22]
 
 jobs: 
   run-github-actions:
