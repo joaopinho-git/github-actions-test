@@ -1,12 +1,12 @@
-name: Slack Notifications
-on: 
-  pull_request:
-    types: [opened]
+# name: Slack Notifications
+# on: 
+#   pull_request:
+#     types: [opened]
 
-jobs:
-  slack-message:
-    runs-on: ubuntu-latest
-    steps: 
-      - name: pull_request Message
-        run: | 
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"New Pull Request created by ${{ github.event.pull_request.user.login }}: <${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}>; ${{ github.event.pull_request.body }}"}' ${{ secrets.SLACK_WEBHOOK }}
+# jobs:
+#   slack-message:
+#     runs-on: ubuntu-latest
+#     steps: 
+#       - name: pull_request Message
+#         run: | 
+#           curl -X POST -H 'Content-type: application/json' --data '{"text":"New Pull Request created by ${{ github.event.pull_request.user.login }}: <${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}>; ${{ github.event.pull_request.body }}"}' ${{ secrets.SLACK_WEBHOOK }}

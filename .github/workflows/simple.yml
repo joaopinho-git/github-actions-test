@@ -1,32 +1,32 @@
-name: Shell Commands
+# name: Shell Commands
 
-on: [pull_request] #[push]
+# on: [pull_request] #[push]
 
-jobs: 
-  run-shell-commands:
-    runs-on: ubuntu-latest
-    timeout-minutes: 360
-    steps:
-      - name: echo a string
-        run: echo "Hello Github Actions World"
-        continue-on-error: true
-      - name: multiline script
-        if: failure()
-        run: |
-          node -v
-          npm -v
-          pwsh
-      - name: python Commands
-        run: |
-          import platform
-          print(platform.processor())
-        shell: python
-  run-windows-commands:
-    runs-on: windows-latest
-    needs: ["run-shell-commands"]
-    steps:
-      - name: Directory Powershell
-        run: Get-Location
-      - name: Directory Bash
-        run: pwd
-        shell: bash
+# jobs: 
+#   run-shell-commands:
+#     runs-on: ubuntu-latest
+#     timeout-minutes: 360
+#     steps:
+#       - name: echo a string
+#         run: echo "Hello Github Actions World"
+#         continue-on-error: true
+#       - name: multiline script
+#         if: failure()
+#         run: |
+#           node -v
+#           npm -v
+#           pwsh
+#       - name: python Commands
+#         run: |
+#           import platform
+#           print(platform.processor())
+#         shell: python
+#   run-windows-commands:
+#     runs-on: windows-latest
+#     needs: ["run-shell-commands"]
+#     steps:
+#       - name: Directory Powershell
+#         run: Get-Location
+#       - name: Directory Bash
+#         run: pwd
+#         shell: bash
