@@ -1,38 +1,39 @@
-# name: Actions Workflow
+name: Actions Workflow
 
-# on: 
-#   #push:
-#   #schedule:
-#   #  - cron: "0/5 * * * *" #every 5 mins
-#   repository_dispatch:
-#     types: [build] 
-#   pull_request:
-#     types: [closed, assigned, opened, reopened]
+on: 
+  #push:
+  #schedule:
+  #  - cron: "0/5 * * * *" #every 5 mins
+  repository_dispatch:
+    types: [build] 
+  pull_request:
+    types: [closed, assigned, opened, reopened]
+    branches: [develop, master22]
 
-# jobs: 
-#   run-github-actions:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Payload
-#         run: echo " ${{ github.event.client_payload.env }} "
-#       - name: List Files
-#         run: |
-#           pwd
-#           ls -la
-#           echo $GITHUB_SHA
-#           echo $GITHUB_REPOSITORY
-#           echo $GITHUB_WORKSPACE
-#           echo " ${{ github.token }} "
-#       - name: Checkout
-#         uses: actions/checkout/@v1
-#       - name: List Files
-#         run: |
-#           pwd
-#           ls -la
-#       - name: Simple JS Action
-#         id: greet
-#         uses: actions/hello-world-javascript-action@v1
-#         with:
-#           who-to-greet: Pinho
-#       - name: Log Greeting Time
-#         run: echo "${{ steps.greet.outputs.time }}"
+jobs: 
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Payload
+        run: echo " ${{ github.event.client_payload.env }} "
+      - name: List Files
+        run: |
+          pwd
+          ls -la
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo " ${{ github.token }} "
+      - name: Checkout
+        uses: actions/checkout/@v1
+      - name: List Files
+        run: |
+          pwd
+          ls -la
+      - name: Simple JS Action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Pinho
+      - name: Log Greeting Time
+        run: echo "${{ steps.greet.outputs.time }}"
