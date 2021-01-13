@@ -14,8 +14,10 @@ jobs:
             joaopinho-git
       - run: |
           echo ${{ steps.issue.outputs.issue }}
-      - uses: ./.github/actions/hello
-        id: hello
+      #- uses: ./.github/actions/hello
+      - uses: ./.github/actions/hello-docker
+        #id: hello
+        id: hello-docker
         with:
           who-to-greet: "World"
       - run: |
