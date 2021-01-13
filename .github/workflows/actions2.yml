@@ -4,10 +4,11 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
-      - run: |
+      - name: give permissions to SH that came from windows
+        run: |
           ls -la
           pwd
-          chmod +x entrypoint.sh
+          chmod +x ./.github/actions/hello-docker/entrypoint.sh
       - uses: ./.github/actions/issue
         id: issue
         with: 
