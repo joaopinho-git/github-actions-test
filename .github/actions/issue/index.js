@@ -20,8 +20,8 @@ async function run() {
     });
 
     core.setOutput('issue', JSON.stringify(response.data));
-  } catch (error) {
-    core.setFailed(error.message);
+  } catch (err) {
+    core.setFailed(err.message);
   }
 }
 
