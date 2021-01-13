@@ -10,7 +10,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: title
           body: body
-          assignees: 'joaopinho-git'
+          assignees: |
+            joaopinho-git
       - run: |
           echo ${{ steps.issue.outputs.issue }}
       - uses: ./.github/actions/hello
