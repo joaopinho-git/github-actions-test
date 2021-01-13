@@ -1,20 +1,22 @@
-# name: CI
+name: CI
 
-# on:
-#   pull_request:
-#     branches: [develop, master22]
+on:
+  pull_request:
+    branches: [develop, master22]
 #   push:                   #used automatically after merge to DEV
 #     branches: [develop, master22]
 
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
+jobs:
+  build:
+   runs-on: ubuntu-latest
 #     env: 
 #       SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
 #       SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-#     steps:
+   steps:
 #       - uses: actions/checkout@v2
-#       - name: Cache node-modules
+    - name: Cache node-modules
+      run: |
+        echo "fake echo"
 #         uses: actions/cache@v1
 #         with: 
 #           path: ~/.npm
