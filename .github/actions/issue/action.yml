@@ -1,5 +1,5 @@
 name: "Open Github Issue"
-author: JPinho
+author: joaopinho-git
 description: "Opens a github issue"
 inputs:
   token:
