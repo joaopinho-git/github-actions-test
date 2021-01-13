@@ -5,7 +5,7 @@ jobs:
     steps: 
       - uses: actions/checkout@v2
       - run: |
-          chmod +X ./entrypoint.sh
+          chmod +X entrypoint.sh
       - uses: ./.github/actions/issue
         id: issue
         with: 
