@@ -10,4 +10,4 @@ jobs:
     steps: 
       - name: pull_request Message
         run: | 
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"Pull Request ${{ github.event.pull_request.number }} ${{ github.event.pull_request.state }} by ${{ github.event.pull_request.user.login }}: <${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}>; ${{ github.event.pull_request.body }}"}' ${{ secrets.SLACK_WEBHOOK }}
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"Pull Request ${{ github.event.pull_request.number }} ${{ github.event.pull_request.state }} by ${{ github.event.sender }}: <${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}>; ${{ github.event.pull_request.body }}"}' ${{ secrets.SLACK_WEBHOOK }}
