@@ -21,4 +21,4 @@ echo 'some stuff2'
 echo 'some stuff3'
 echo '::endgroup::'
 
-echo "HELLO=hello" >> $GITHUB_ENV
+echo "HELLO=hello-docker jpine" >> $GITHUB_ENV
