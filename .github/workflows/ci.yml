@@ -45,12 +45,12 @@ jobs:
           name: build
           path: build
       - name: ZIP Assets 
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master22'
         run: |
           zip -r build.zip ./build
           zip -r coverage.zip ./build
       - name: Create a Release
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master22'
         run: npx semantic-release
         env: 
           GITHUB_TOKEN: ${{ secrets.CUSTOM_TOKEN }}
@@ -58,10 +58,10 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
         run: npx surge --project ./build --domain silent-apparatus.surge.sh         #install and run surge in 1 line
       - name: Deploy to Production
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master22'
         run: npx surge --project ./build --domain enormous-poison-prod.sh
       - name: Upload Coverage Reports
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master22'
         run: npx codecov        #install and run codecov in 1 line
         env: 
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
