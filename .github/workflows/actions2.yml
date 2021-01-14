@@ -4,6 +4,11 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
+      - name: Send a Slack Message
+        uses: ./.github/actions/slack
+        with:
+          slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
+          message: Hello Slack from PHP Action
       - name: give permissions to SH that came from windows
         run: |
           ls -la
