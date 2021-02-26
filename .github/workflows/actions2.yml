@@ -4,7 +4,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
-      - name: Send a Slack Message -  message tal cenas
+      - name: "Send a Slack Message: message tal cenas"
         uses: ./.github/actions/slack
         with:
           slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
