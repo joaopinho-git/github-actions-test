@@ -1,0 +1,6 @@
+{
+    "GITHUB_KEY": "__GITHUB_KEY__",
+    "VAULT_URL": "https://vault.release.ff.infra",
+    "VAULT_TOKEN": "__VAULT_TOKEN__",
+    "VAULT_MOUNT_POINT": "crops-ff-qa"    
+}

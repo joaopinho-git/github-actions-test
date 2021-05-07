@@ -15,6 +15,8 @@ jobs:
           pwd
           pip install --upgrade pip
           pip install -r ./requirements.txt
+          sed -i 's/__GITHUB_KEY__/${{ secrets.POCARALHO }}/g' .src/vault/configs/config.json
+          sed -i 's/__VAULT_TOKEN__/${{ secrets.VAULT_TOKEN }}/g' .src/vault/configs/config.json
       - name: python Commands
         run: |
           print("Start running main.py")
