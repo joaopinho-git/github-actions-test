@@ -1,0 +1,4 @@
+requests==2.9.1
+async_hvac==0.6.1
+simplejson==3.17.2
+PyYaml==5.4.1

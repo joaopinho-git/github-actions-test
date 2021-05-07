@@ -1,0 +1,26 @@
+name: Actions Workflow
+
+on: 
+  pull_request:
+    types: [closed, assigned, opened, reopened]
+
+jobs: 
+  run-github-changejob:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install dependencies        
+        run: |
+          ls -la
+          pwd
+          pip install --upgrade pip
+          pip install -r ./requirements.txt
+      - name: Configs Replaces       
+        run: |
+          echo "Replaces"
+          sed -i 's/__GITHUB_KEY__/${{ secrets.POCARALHO }}/g' src/vault/configs/config.json
+          sed -i 's/__VAULT_TOKEN__/${{ secrets.VAULT_TOKEN }}/g' src/vault/configs/config.json
+      - name: Python Commands
+        run: |
+          echo "Start running main.py"
+          python src/vault/main.py
