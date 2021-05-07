@@ -1,6 +1,0 @@
-{
-    "GITHUB_KEY": "d9959ce1157e516a38993d138fc749e66ed29244",
-    "VAULT_URL": "https://vault.release.ff.infra",
-    "VAULT_TOKEN": "s.MztaQaFaS1qVbcXzKPr7xYEl",
-    "VAULT_MOUNT_POINT": "crops-ff-qa"    
-}
