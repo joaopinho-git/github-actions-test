@@ -8,9 +8,15 @@ jobs:
   run-github-changejob:
     runs-on: ubuntu-latest
     steps:
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v2.1
-      - name: File changed rebuild and test
-        if: contains(steps.changed-files.outputs.modified_files, 'changeMe.txt')
-        run: echo "Call my docker"
+      - uses: actions/checkout@v1
+      - name: Install dependencies        
+        run: |
+          ls -la
+          pwd
+          pip install --upgrade pip
+          pip install -r ./requirements.txt
+      - name: python Commands
+        run: |
+          print("Start running main.py")
+          ./src/vault/main.py
+        shell: python
